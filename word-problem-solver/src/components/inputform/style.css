@@ -1,0 +1,19 @@
+.input-form {
+    text-align: left;
+    padding: 12px 20px;
+}
+
+.textbox-label {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.input-component {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.submit {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

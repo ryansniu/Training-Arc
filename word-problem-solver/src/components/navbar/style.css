@@ -1,0 +1,12 @@
+.navbar {
+    display: flex;
+    background-color: #203354;
+}
+
+.navbar-component {
+    color: #F6DD90;
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    padding-left: 15px;
+    padding-right: 15px;
+}
