@@ -60,8 +60,6 @@ def questionTag(solution):
 				topics.append({"topics":keyTopic})
 			break
 
-
-
 	print(topics)
 	return topics
 
@@ -72,35 +70,38 @@ def questionParse(question):
 
 	appid = os.getenv('WA_APPID', '88EHGH-JKPJPYA263')
 
-	#sample
-	# question="Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles more than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?"
-
 	query = urllib.parse.quote_plus(f"{question}")
 	query_url = f"http://api.wolframalpha.com/v2/query?" \
 	            f"appid={appid}" \
 	            f"&input={query}" \
 	            f"&format=plaintext" \
-				f"&podstate=Step-by-step%20solution" \ #needed to expand step by step
+				f"&podstate=Step-by-step%20solution" \
 	            f"&output=json"
 
 	print(query_url)
 
 	r = requests.get(query_url).json()
-	print(r)
-	#
-	# for i in range(0, r["queryresult"]["numpods"]):
-	# 	print( r["queryresult"]["pods"][i]["title"])
+	print(type(r))
+	results=[]
 	result = r["queryresult"]["pods"]
 
 	print("------------")
 	for i in result:
 		print(i)
-	return result
+	results.append(r)
+	results.append(result)
+	results.append(questionTag(results[1]))
+	return results
 	print("DONE")
+	#json, parsedJSON, topics
 
 rhondaTest="Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles more than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?"
 bobTest="Bob has 34 apples. Quincy has 21 apples. How many apples do they have together?"
-question=input("Query:")
+# question=input("Query:")
 
-data=questionParse()
-topics=questionTag(data)
+data=questionParse(rhondaTest)
+
+for i in data:
+
+	print(i)
+# topics=questionTag(data)
