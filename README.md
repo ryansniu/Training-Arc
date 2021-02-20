@@ -3,6 +3,7 @@ Time to solve some word problems!
 
 
 FINISHED:
+
   Link between python and Js
   
   Frontend progress
@@ -10,6 +11,7 @@ FINISHED:
   python script nearly done
 
 TODO:
+
   Presentation
   
   finish frontend
