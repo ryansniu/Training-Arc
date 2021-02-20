@@ -5,7 +5,7 @@ from pprint import pprint
 import requests
 import os
 import urllib.parse
-
+import sys
 
 def questionTag(solution):
 	topics=[]
@@ -97,11 +97,17 @@ def questionParse(question):
 
 rhondaTest="Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles more than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?"
 bobTest="Bob has 34 apples. Quincy has 21 apples. How many apples do they have together?"
-# question=input("Query:")
 
-data=questionParse(rhondaTest)
+#rawinput input
+# question=input("Query:")
+# data=questionParse(question)
+
+#cmd line input
+print (str(sys.argv))
+data=questionParse(sys.argv[1])
 
 for i in data:
-
 	print(i)
+
+#moved call into questionParse
 # topics=questionTag(data)
