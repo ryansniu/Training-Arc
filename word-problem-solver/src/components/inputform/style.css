@@ -1,6 +1,7 @@
 .input-form {
     text-align: left;
     padding: 12px 20px;
+    white-space: pre-wrap;
 }
 
 .textbox-label {
@@ -15,5 +16,9 @@
 }
 
 .submit {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.queries {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }

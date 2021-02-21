@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './style.css';
 
 function InputForm() {
     const nameEl = React.useRef(null);
+    var query = {};
+    let numpods = 0;
+    let arr = [];
+    const [queries, setQueries] = useState([]);
 
     const handleSubmit = e => {
       e.preventDefault();
@@ -15,9 +19,25 @@ function InputForm() {
             body:JSON.stringify(nameEl.current.value)
         }
       ).then(res => res.json()).then(data => {
-        alert(JSON.stringify(data));
+        //alert(JSON.stringify(data));
+        query = data["queryresult"];
+        numpods = query["numpods"];
+        var i;
+        for (i = 0; i < numpods; i++) {
+            var pod = query["pods"][i];
+            let numSubpods = pod["numsubpods"];
+            var j;
+            for (j = 0; j < numSubpods; j++) {
+                arr.push(JSON.stringify(pod["subpods"][j]["plaintext"]));
+            }
+        }
+        setQueries(arr);
       });
     };
+
+    useEffect(() => {
+        //alert(queries);
+    }, [queries])
 
     return (
         <div className="input-form">
@@ -28,6 +48,14 @@ function InputForm() {
             </label>
             <input className="submit" type="submit" value="Submit" />
         </form>
+        {queries.map((value, index) => {
+            let newText = value.split('\\n').map(str => {
+                return <p className="queries">{str}</p>
+            });
+            return newText;
+            // alert(value.split('\\n'));
+            // return <p className="queries">{`${value}`}</p>
+        })}
         </div>
     );
 }
