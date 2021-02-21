@@ -83,4 +83,4 @@ function Quiz() {
 	);
 }
 
-export default withRouter(Quiz);
+export default Quiz;

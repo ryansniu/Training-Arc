@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Switch>
-        <Route path="/" component={withRouter(InputForm)}></Route>
+        <Route path="/input-form" component={withRouter(InputForm)}></Route>
         <Route path="/take-quiz" component={withRouter(Quiz)}></Route>
       </Switch>
     </div>

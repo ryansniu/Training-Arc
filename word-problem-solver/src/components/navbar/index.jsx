@@ -5,7 +5,7 @@ function Navbar() {
   return (
       <div className="navbar">
         <p className="navbar-component">
-            <Link to="/" style={{ textDecoration: 'none', color: "#F6DD90" }}>Word Problem Solver</Link>
+            <Link to="/input-form" style={{ textDecoration: 'none', color: "#F6DD90" }}>Word Problem Solver</Link>
         </p>
         <p className="navbar-component">
             <Link to="/take-quiz" style={{ textDecoration: 'none', color: "#F6DD90" }}>Take Quiz</Link>
