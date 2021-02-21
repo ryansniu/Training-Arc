@@ -32,8 +32,8 @@
 		{
       "questionText": "A day has 24 hours. Matthew spent 14 of them sleeping. How many hours are left in the day?",
       "answerOptions": [
-				{"answerText":"10 hours", "isCorrect":false},
-				{"answerText":"4 hours", "isCorrect":true},
+				{"answerText":"10 hours", "isCorrect":true},
+				{"answerText":"4 hours", "isCorrect":false},
 				{"answerText":"8 hours", "isCorrect":false},
 				{"answerText":"17 hours", "isCorrect":false}
 
