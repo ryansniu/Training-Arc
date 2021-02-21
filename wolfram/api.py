@@ -1,10 +1,8 @@
-import time
+# import wolframalpha
+# from pprint import pprint
+
 from flask import Flask, request
-
 import ssl
-import wolframalpha
-
-from pprint import pprint
 import requests
 import os
 import urllib.parse
@@ -13,12 +11,12 @@ import sys
 app = Flask(__name__)
 
 @app.route('/wolfram', methods = ['POST'])
-def get_current_time():
-    print("start")
+def get_wolfram_response():
+    print("getting request...")
     print(request.json)
     data=questionParse(request.json)
-    print(data[0])
-    return data[0]
+    print("request GET!")
+    return data
 
 def questionTag(solution):
 	topics=[]
@@ -58,7 +56,6 @@ def questionTag(solution):
 				if words in solveStep and keywords.get(words) not in keyTopic:
 					keyTopic.append(keywords.get(words))
 
-
 			# adjacent multiplication case
 			solveStep=solveStep.replace(" ","")
 			for count in range(0, len(solveStep)-1):
@@ -71,8 +68,9 @@ def questionTag(solution):
 				topics.append({"topics":keyTopic})
 			break
 
-	#print(topics)
+	# print("topics found: "+str(topics))
 	return topics
+
 
 
 def questionParse(question):
@@ -88,32 +86,29 @@ def questionParse(question):
 				f"&podstate=Step-by-step%20solution" \
 	            f"&output=json"
 
-	#print(query_url)
+	# print(query_url)
 
 	r = requests.get(query_url).json()
-	print(type(r))
 	results=[]
 	result = r["queryresult"]["pods"]
 
-	print("------------")
-	#for i in result:
-	#	print(i)
-	results.append(r)
-	results.append(result)
-	results.append(questionTag(results[1]))
-	return results
+	eqTopic=questionTag(result)
+	r["topics"]=eqTopic
+	return r
 	#json, parsedJSON, topics
 
+
+
+#preset input
+# rhondaTest="Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles more than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?"
+# bobTest="Bob has 34 apples. Quincy has 21 apples. How many apples do they have together?"
+# data=questionParse(rhondaTest)
+# print(data)
 
 #rawinput input
 # question=input("Query:")
 # data=questionParse(question)
 
 #cmd line input
-#print (str(sys.argv))
-
-#for i in data:
-#	print(i)
-
-#moved call into questionParse
-# topics=questionTag(data)
+# print (str(sys.argv))
+# data=questionParse(sys.argv[1])

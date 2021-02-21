@@ -19,7 +19,7 @@ function InputForm() {
             body:JSON.stringify(nameEl.current.value)
         }
       ).then(res => res.json()).then(data => {
-        //alert(JSON.stringify(data));
+        // alert(JSON.stringify(data));
         query = data["queryresult"];
         numpods = query["numpods"];
         var i;
