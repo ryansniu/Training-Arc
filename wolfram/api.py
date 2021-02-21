@@ -8,7 +8,18 @@ import os
 import urllib.parse
 import sys
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../word-problem-solver/build', static_url_path='/')
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 @app.route('/wolfram', methods = ['POST'])
 def get_wolfram_response():
