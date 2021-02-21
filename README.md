@@ -1,4 +1,4 @@
-# word-problem-solver
+# Training Arc
 Time to solve some word problems!
 
 
