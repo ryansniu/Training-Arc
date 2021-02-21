@@ -1,5 +1,5 @@
 # Training Arc
-Time to solve some word problems!
+Level up your math word problem solving skills with Training Arc!
 
 ## Inspiration
 Many students struggle to translate math word problems to their respective equations that the students are more familiar with. Furthermore, with online learning, it is hard to give personalized feedback to the students to help familiarize them with the proper steps to take to solve word problems. Because of this, we wanted to develop a web application that could assess a student's abilities to solve a variety of word problems, and then provide step-by-step solutions as to how to solve word problems that they may be having trouble with.
