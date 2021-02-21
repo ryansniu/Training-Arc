@@ -6,8 +6,17 @@ function InputForm() {
 
     const handleSubmit = e => {
       e.preventDefault();
-      alert(nameEl.current.value);
-      // want to call function that will send problem to wolfram api
+      fetch('/wolfram', {
+            method: "POST",
+            cache: "no-cache",
+            headers:{
+                "content_type":"application/json",
+            },
+            body:JSON.stringify(nameEl.current.value)
+        }
+      ).then(res => res.json()).then(data => {
+        alert(JSON.stringify(data));
+      });
     };
 
     return (
