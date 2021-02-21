@@ -22,21 +22,26 @@ function InputForm() {
         }
       ).then(res => res.json()).then(data => {
         // alert(JSON.stringify(data));
-        query = data["queryresult"];
-        numpods = query["numpods"];
-        var i;
-        for (i = 0; i < numpods; i++) {
-            var pod = query["pods"][i];
-            let numSubpods = pod["numsubpods"];
-            var j;
-            for (j = 0; j < numSubpods; j++) {
-                arr.push(JSON.stringify(pod["subpods"][j]["plaintext"]));
-            }
+        if (data["queryresult"]["success"] === false) {
+            arr.push("Can't solve word problem. Try another problem!");
         }
-        let t = data["topics"];
-        var k;
-        for (k = 0; k < t.length; k++) {
-            topic.push(JSON.stringify(t[k]));
+        else {
+            query = data["queryresult"];
+            numpods = query["numpods"];
+            var i;
+            for (i = 0; i < numpods; i++) {
+                var pod = query["pods"][i];
+                let numSubpods = pod["numsubpods"];
+                var j;
+                for (j = 0; j < numSubpods; j++) {
+                    arr.push(JSON.stringify(pod["subpods"][j]["plaintext"]));
+                }
+            }
+            let t = data["topics"];
+            var k;
+            for (k = 0; k < t.length; k++) {
+                topic.push(JSON.stringify(t[k]));
+            }
         }
         setQueries(arr);
         setTopics(topic);

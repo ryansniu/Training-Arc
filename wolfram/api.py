@@ -89,6 +89,8 @@ def questionParse(question):
 	# print(query_url)
 
 	r = requests.get(query_url).json()
+	if (r["queryresult"]["success"] == False):
+		return r
 	results=[]
 	result = r["queryresult"]["pods"]
 
