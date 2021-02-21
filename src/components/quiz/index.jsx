@@ -53,8 +53,10 @@ function Quiz() {
       <div className='quiz'>
 			{showScore ? (
 				<div className='score-section'>
-					You scored {score} out of {questions.length}
-					{percentages}
+					<div className='score-text'>
+						You scored {score} out of {questions.length}
+						{percentages}
+					</div>
 				</div>
 			) : (
 				<>
