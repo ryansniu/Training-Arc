@@ -6,6 +6,7 @@ import requests
 import os
 import urllib.parse
 import sys
+import json
 
 def questionTag(solution):
 	topics=[]
@@ -42,7 +43,6 @@ def questionTag(solution):
 
 			#EXPAND KEYWORD DICTIONARY
 			for words in keywords:
-				print(words)
 				if words in solveStep and keywords.get(words) not in keyTopic:
 					keyTopic.append(keywords.get(words))
 
@@ -50,7 +50,6 @@ def questionTag(solution):
 			# adjacent multiplication case
 			solveStep=solveStep.replace(" ","")
 			for count in range(0, len(solveStep)-1):
-				print(solveStep[count]+solveStep[count+1])
 				if solveStep[count].isnumeric() and solveStep[count+1].isalpha():
 					operators.append("*")
 					break
@@ -60,7 +59,7 @@ def questionTag(solution):
 				topics.append({"topics":keyTopic})
 			break
 
-	print(topics)
+	print("topics found: "+str(topics))
 	return topics
 
 
@@ -81,17 +80,13 @@ def questionParse(question):
 	print(query_url)
 
 	r = requests.get(query_url).json()
-	print(type(r))
 	results=[]
 	result = r["queryresult"]["pods"]
 
-	print("------------")
-	for i in result:
-		print(i)
-	results.append(r)
-	results.append(result)
-	results.append(questionTag(results[1]))
-	return results
+	eqTopic=questionTag(result)
+	r["topics"]=eqTopic
+	return r
+
 	print("DONE")
 	#json, parsedJSON, topics
 
@@ -100,7 +95,7 @@ bobTest="Bob has 34 apples. Quincy has 21 apples. How many apples do they have t
 
 #preset input
 data=questionParse(rhondaTest)
-
+print(data)
 #rawinput input
 # question=input("Query:")
 # data=questionParse(question)
@@ -108,9 +103,6 @@ data=questionParse(rhondaTest)
 #cmd line input
 # print (str(sys.argv))
 # data=questionParse(sys.argv[1])
-
-for i in data:
-	print(i)
 
 #moved call into questionParse
 # topics=questionTag(data)
