@@ -8,7 +8,7 @@ import os
 import urllib.parse
 import sys
 
-app = Flask(__name__, static_folder='./build', static_url_path='/')
+app = Flask(__name__, static_folder='../word-problem-solver/build', static_url_path='/')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
