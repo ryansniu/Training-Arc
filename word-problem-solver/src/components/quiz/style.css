@@ -1,4 +1,11 @@
-.app {
+.quiz-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.quiz {
     background-color: #252d4a;
     width: 450px;
     min-height: 200px;
@@ -7,7 +14,9 @@
     padding: 20px;
     box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    font-family: "Verdana", cursive, sans-serif;
+    color: #ffffff;
 }
 
 .score-section {

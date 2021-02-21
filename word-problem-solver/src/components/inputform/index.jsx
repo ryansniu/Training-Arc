@@ -53,23 +53,32 @@ function InputForm() {
     }, [queries])
 
     return (
-        <div className="input-form">
-        <form onSubmit={handleSubmit}>
-            <label className="textbox-label">
-                Put word problem here:
-                <input className="input-component" type="text" name="problem" ref={nameEl} />
-            </label>
-            <input className="submit" type="submit" value="Submit" />
-        </form>
-        {queries.map((value, index) => {
-            let newText = value.split('\\n').map(str => {
-                return <p className="queries">{str}</p>
-            });
-            return <div>{newText}<br /></div>;
-        })}
-        {topics.map((value, index) => {
-            return <p className="topics">{value}</p>;
-        })}
+        <div>
+            <div className="input-form">
+                <form onSubmit={handleSubmit}>
+                    <label className="textbox-label">
+                        Put word problem here:
+                        <input className="input-component" type="text" name="problem" ref={nameEl} />
+                    </label>
+                    <input className="submit" type="submit" value="Submit" />
+                </form>
+            </div>
+            <div className="query-text">
+                {queries.map((value, index) => {
+                    let newText = value.split('\\n').map(str => {
+                        return <p className="queries">{str}</p>
+                    });
+                    return (
+                        <div>
+                            {newText}
+                            <br />
+                        </div>
+                    );
+                })}
+                {topics.map((value, index) => {
+                    return <p className="topics">{value}</p>;
+                })}
+            </div>
         </div>
     );
 }
