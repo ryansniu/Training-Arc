@@ -60,7 +60,7 @@ function InputForm() {
             let newText = value.split('\\n').map(str => {
                 return <p className="queries">{str}</p>
             });
-            return <div className="query-block">{newText}<br /></div>;
+            return <div>{newText}<br /></div>;
         })}
         {topics.map((value, index) => {
             return <p className="topics">{value}</p>;
