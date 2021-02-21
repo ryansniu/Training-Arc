@@ -1,6 +1,3 @@
-# import wolframalpha
-# from pprint import pprint
-
 from flask import Flask, request
 import ssl
 import requests
@@ -23,11 +20,13 @@ def index():
 
 @app.route('/wolfram', methods = ['POST'])
 def get_wolfram_response():
-    print("getting request...")
-    print(request.get_json(force = True))
+    # print("getting request...")
+    # print(request.get_json(force = True))
     data=questionParse(request.get_json(force = True))
-    print("request GET!")
+    # print("request GET!")
     return data
+
+
 
 def questionTag(solution):
 	topics=[]
@@ -83,7 +82,6 @@ def questionTag(solution):
 	return topics
 
 
-
 def questionParse(question):
 	ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -109,8 +107,6 @@ def questionParse(question):
 	r["topics"]=eqTopic
 	return r
 	#json, parsedJSON, topics
-
-
 
 #preset input
 # rhondaTest="Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles more than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?"

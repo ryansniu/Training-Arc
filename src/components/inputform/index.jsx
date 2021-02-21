@@ -7,11 +7,13 @@ function InputForm() {
     var topic = [];
     let numpods = 0;
     let arr = [];
+    const [isLoading, setIsLoading] = useState(false);
     const [queries, setQueries] = useState([]);
     const [topics, setTopics] = useState([]);
 
     const handleSubmit = e => {
       e.preventDefault();
+      setIsLoading(true);
       fetch('/wolfram', {
             method: "POST",
             cache: "no-cache",
@@ -45,6 +47,7 @@ function InputForm() {
                 topic.push(JSON.stringify(t[k]));
             }
         }
+        setIsLoading(false);
         setQueries(arr);
         setTopics(topic);
       });
@@ -68,9 +71,14 @@ function InputForm() {
             </div>
             <div className="query-text">
                 <label className="textbox-label">
-                        SOLUTION:
+                        <b>SOLUTION:</b>
                 </label>
-                {queries.map((value, index) => {
+                {isLoading &&
+                    <label className="textbox-label">
+                            <br/>Loading...
+                    </label>
+                }
+                {!isLoading && queries.map((value, index) => {
                     let newText = value.split('\\n').map(str => {
                         return <p className="queries">{str}</p>
                     });
@@ -81,7 +89,7 @@ function InputForm() {
                         </div>
                     );
                 })}
-                {topics.map((value, index) => {
+                {!isLoading && topics.map((value, index) => {
                     return <p className="topics">{value}</p>;
                 })}
             </div>
