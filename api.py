@@ -24,8 +24,8 @@ def index():
 @app.route('/wolfram', methods = ['POST'])
 def get_wolfram_response():
     print("getting request...")
-    print(request.get_json())
-    data=questionParse(request.get_json())
+    print(request.get_json(force = True))
+    data=questionParse(request.get_json(force = True))
     print("request GET!")
     return data
 
