@@ -15,3 +15,7 @@ The two major challenges that we ran into were connecting the Python script to t
 We learned how to use the Wolfram Alpha API, as well as other technologies such as Flask and heroku. We also learned how to connect the backend server with the frontend client, making our website more dynamic.
 ## What's next for Word Problem Solver
 We hope to expand the functionality of our word problem solver to be able accept a larger variety of questions. Furthermore, we would like to generate word problem questions and tag them using an online word problem API to use for the quiz questions. We would like to make an automatic topic detection for all kinds of word problems to tag each of the randomly generated word problems.
+
+
+##DEMO
+https://training-arc.herokuapp.com
