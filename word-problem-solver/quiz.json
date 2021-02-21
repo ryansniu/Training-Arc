@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "questionText": "Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles m,ore than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?",
+      "answerOptions": [
+				{"answerText":"Douglas has 2. Bertha has 34. Rhonda has 3", "isCorrect":false},
+				{"answerText":"Douglas has 6. Bertha has 12. Rhonda has 1", "isCorrect":false},
+				{"answerText":"Douglas has 24. Bertha has 18. Rhonda has 36", "isCorrect":true},
+				{"answerText":"Douglas has 28. Bertha has 34. Rhonda has 3", "isCorrect":false}
+
+			],
+    },
+		{
+      "questionText": "Bob has 8 pigeons. Sam has 432 pigeons. How many pigeons do they have together?",
+      "answerOptions": [
+				{"answerText":"440 pigeons", "isCorrect":true},
+				{"answerText":"12 pigeons", "isCorrect":false},
+				{"answerText":"431 pigeons", "isCorrect":false},
+				{"answerText":"1 pigeon", "isCorrect":false}
+
+			],
+    },
+		{
+      "questionText": "Dorothy has 12 cats and Shirley has 13 cats. How many more cats does Shirley have than Dorothy?",
+      "answerOptions": [
+				{"answerText":"2 cats", "isCorrect":false},
+				{"answerText":"3 cats", "isCorrect":false},
+				{"answerText":"4 cats", "isCorrect":false},
+				{"answerText":"1 cat", "isCorrect":true}
+
+			],
+    },
+		{
+      "questionText": "A day has 24 hours. Matthew spent 14 of them sleeping. How many hours are left in the day?",
+      "answerOptions": [
+				{"answerText":"10 hours", "isCorrect":false},
+				{"answerText":"4 hours", "isCorrect":false},
+				{"answerText":"8 hours", "isCorrect":true},
+				{"answerText":"17 hours", "isCorrect":false}
+
+			],
+    },
+		{
+      "questionText": "Your mom gives you 10 dollars. If you spend 3 dollars, how many dollars do you have?",
+      "answerOptions": [
+				{"answerText":"11 dollars", "isCorrect":false},
+				{"answerText":"7 dollars", "isCorrect":true},
+				{"answerText":"3 dollars", "isCorrect":false},
+				{"answerText":"10 dollars", "isCorrect":false}
+
+			],
+    },
+  ]
+}
