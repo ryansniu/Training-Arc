@@ -17,5 +17,5 @@ We learned how to use the Wolfram Alpha API, as well as other technologies such 
 We hope to expand the functionality of our word problem solver to be able accept a larger variety of questions. Furthermore, we would like to generate word problem questions and tag them using an online word problem API to use for the quiz questions. We would like to make an automatic topic detection for all kinds of word problems to tag each of the randomly generated word problems.
 
 
-DEMO
+DEMO:
 https://training-arc.herokuapp.com
