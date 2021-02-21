@@ -68,7 +68,7 @@ def questionTag(solution):
 				topics.append({"topics":keyTopic})
 			break
 
-	# print("topics found: "+str(topics))
+	print("topics found: "+str(topics))
 	return topics
 
 

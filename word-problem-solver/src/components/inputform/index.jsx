@@ -4,9 +4,11 @@ import './style.css';
 function InputForm() {
     const nameEl = React.useRef(null);
     var query = {};
+    var topic = [];
     let numpods = 0;
     let arr = [];
     const [queries, setQueries] = useState([]);
+    const [topics, setTopics] = useState([]);
 
     const handleSubmit = e => {
       e.preventDefault();
@@ -31,7 +33,13 @@ function InputForm() {
                 arr.push(JSON.stringify(pod["subpods"][j]["plaintext"]));
             }
         }
+        let t = data["topics"];
+        var j;
+        for (j = 0; j < t.length; j++) {
+            topic.push(JSON.stringify(t[j]));
+        }
         setQueries(arr);
+        setTopics(topic);
       });
     };
 
@@ -52,7 +60,10 @@ function InputForm() {
             let newText = value.split('\\n').map(str => {
                 return <p className="queries">{str}</p>
             });
-            return newText;
+            return <div className="query-block">{newText}<br /></div>;
+        })}
+        {topics.map((value, index) => {
+            return <p className="topics">{value}</p>;
         })}
         </div>
     );
