@@ -34,9 +34,9 @@ function InputForm() {
             }
         }
         let t = data["topics"];
-        var j;
-        for (j = 0; j < t.length; j++) {
-            topic.push(JSON.stringify(t[j]));
+        var k;
+        for (k = 0; k < t.length; k++) {
+            topic.push(JSON.stringify(t[k]));
         }
         setQueries(arr);
         setTopics(topic);
