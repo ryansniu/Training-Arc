@@ -31,10 +31,12 @@ function InputForm() {
             var i;
             for (i = 0; i < numpods; i++) {
                 var pod = query["pods"][i];
-                let numSubpods = pod["numsubpods"];
-                var j;
-                for (j = 0; j < numSubpods; j++) {
-                    arr.push(JSON.stringify(pod["subpods"][j]["plaintext"]));
+                if (pod["title"] === "Result" || pod["title"] === "Additional results" || pod["title"] === "Equations with variables") {
+                    let numSubpods = pod["numsubpods"];
+                    var j;
+                    for (j = 0; j < numSubpods; j++) {
+                        arr.push(JSON.stringify(pod["subpods"][j]["plaintext"]));
+                    }
                 }
             }
             let t = data["topics"];

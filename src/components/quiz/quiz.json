@@ -1,6 +1,6 @@
 [
     {
-      "questionText": "Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles m,ore than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?",
+      "questionText": "Rhonda has 12 marbles more than Douglas. Douglas has 6 marbles more than Bertha. Rhonda has twice as many marbles as Bertha has. How many marbles does Douglas have?",
       "answerOptions": [
 				{"answerText":"Douglas has 2. Bertha has 34. Rhonda has 3", "isCorrect":false},
 				{"answerText":"Douglas has 6. Bertha has 12. Rhonda has 1", "isCorrect":false},
