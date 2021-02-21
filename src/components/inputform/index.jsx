@@ -59,13 +59,17 @@ function InputForm() {
             <div className="input-form">
                 <form onSubmit={handleSubmit}>
                     <label className="textbox-label">
-                        Put word problem here:
-                        <input className="input-component" type="text" name="problem" ref={nameEl} />
+                        ENTER A WORD PROBLEM: <br/>
+                        <textarea className="input-component" type="text" name="problem" ref={nameEl} />
                     </label>
-                    <input className="submit" type="submit" value="Submit" />
+                    <br/>
+                    <input className="submit" type="submit" value="SUBMIT" />
                 </form>
             </div>
             <div className="query-text">
+                <label className="textbox-label">
+                        SOLUTION:
+                </label>
                 {queries.map((value, index) => {
                     let newText = value.split('\\n').map(str => {
                         return <p className="queries">{str}</p>
