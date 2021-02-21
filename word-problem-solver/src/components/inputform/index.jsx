@@ -53,8 +53,6 @@ function InputForm() {
                 return <p className="queries">{str}</p>
             });
             return newText;
-            // alert(value.split('\\n'));
-            // return <p className="queries">{`${value}`}</p>
         })}
         </div>
     );
